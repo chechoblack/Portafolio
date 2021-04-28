@@ -1,21 +1,11 @@
 import Contact from "./components/Contact";
 import Home from "./components/Home";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <>
-      <div className="wrapper">
-        <div className="logo">
-          <img src="./assets/logo_portafolio.png" alt="logo"></img>
-        </div>
-        <ul className="nav-area">
-          <li><a href="#Home">Home</a></li>
-          <li><a href="#About">About</a></li>
-          <li><a href="#Services">Skills</a></li>
-          <li><a href="#Portfolio">Portfolio</a></li>
-          <li><a href="#Contact">Contact</a></li>
-        </ul>
-      </div>
+      <Navbar></Navbar>
       <section id="Home">
         <Home></Home>
       </section>
