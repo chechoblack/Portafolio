@@ -1,0 +1,289 @@
+:root {
+  /* brand colors */
+  --color-provincial-pink: #fff4f2;
+
+  /* base colors */
+  --color-white: #fff;
+  --color-black: #000;
+
+  /* colors */
+  --color-primary: #2EC1A3;
+  --color-primary-highlight: #f68e5f;
+  --color-secondary: #324376;
+  --color-secondary-highlight: #586ba4;
+  --color-font-base: #fff;
+  --color-font-highlight: #547aa5;
+  --color-font-inverted: #f5f5f5;
+
+  /* backgrounds */
+  --background-primary: #f2f4f9;
+
+  /* font-sizes */
+  --font-size-base: 10px;
+  --font-size-xs: 1.2rem;
+  --font-size-sm: 1.8rem;
+  --font-size-md: 2.2rem;
+  --font-size-lg: 3.5rem;
+  --font-size-xl: 5.5rem;
+  
+}
+
+/** reset **/
+html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,
+legend,textarea,pre,iframe,
+hr,h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-size: 100%;
+  font-weight: normal;
+  font-family: "Rubik", sans-serif;
+  line-height: 1.125;
+}
+
+ul {
+  list-style: none;
+}
+
+button,input,select,textarea {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+/* html elements */
+
+body {
+  background: var(--background-primary);
+  color: var(--color-font-base);
+  font-family: "Karla", sans-serif;
+}
+
+p {
+  color: var(--color-font-highlight);
+  font-size: var(--font-size-md);
+  margin: 20px 0;
+}
+
+button {
+  padding: 25px 20px;
+  border: 1px solid transparent;
+  background: var(--color-primary);
+  color: black;
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 600;
+  max-width: 200px;
+  width: 100%;
+}
+
+button.is-block {
+  max-width: 100%;
+}
+/* components  */
+/************ 
+//-------------------------------
+// CABECERA
+//-------------------------------
+************/
+.wrapper {
+	height: 80px;
+	width: 100%;
+	left: 0;
+	top: 0;
+	position: fixed;
+}
+.nav-area {
+	float: right;
+	list-style: none;
+	margin-top: 10px;
+}
+.nav-area li {
+	display: inline-block;
+}
+.nav-area li a {
+	text-decoration: none;
+  position: relative;
+  display: block;
+  padding: 5px 2px;
+  margin: 0 12px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  transition: color 0.1s, background-color 0.1s;
+  color: #fff;
+}
+.nav-area li a:hover {
+  color: #4dd0e1;
+}
+.nav-area li a:focus, a:active {
+  color: #00bcd4;
+}
+
+.nav-area li a::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-primary);
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  transition: color 0.6s, -webkit-transform 0.7s ease-out;
+  transition: color 0.6s, transform 0.7s ease-out;
+  transition: color 0.6s, transform 0.7s ease-out, -webkit-transform 0.2s ease-out;
+}
+
+.nav-area li a:active::before {
+  background-color: #00bcd4;
+}
+
+.nav-area li a:hover::before,
+.nav-area li a:focus::before {
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+.nav-area li a:hover {
+	color: var(--color-primary);
+}
+
+/************ 
+//-------------------------------
+// Logo
+//-------------------------------
+************/
+.logo {
+	float: left;
+}
+.logo img {
+	width: 45%;
+}
+/************ 
+//-------------------------------
+// Inicio
+//-------------------------------
+************/
+.section {
+  overflow: hidden;
+  /*padding: 50px 30px;*/
+}
+
+.section.not-bottom {
+  padding-bottom: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: 70%;
+  margin: 0 auto;
+  max-width: 2000px;
+}
+
+.container.is-short {
+  min-height: auto;
+}
+
+.container.is-column {
+  flex-direction: column;
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: var(--font-size-md);
+}
+
+.title span {
+  color: var(--color-primary);
+}
+
+.title strong {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: var(--font-size-lg);
+}
+.hero{
+  /*https://image.freepik.com/foto-gratis/viejo-fondo-negro-textura-grunge-papel-tapiz-oscuro-pizarra-pizarra-pared-habitacion_1258-28312.jpg*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(https://i.postimg.cc/YjcJg24M/aa.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	position: -1;
+}
+
+.hero .container {
+  min-height: auto;
+}
+
+.hero-content {
+  max-width: 2000px;
+  text-align: center;
+}
+.hero-content button:hover{
+  background:var(--color-secondary);
+	color: #fff;
+}
+/************ 
+//-------------------------------
+// Contacto
+//-------------------------------
+************/
+.contact{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(https://www.negro.store/wp-content/uploads/2018/07/fondos-negros-escritorio-mosaico.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	position: -1;
+}
+.btn-contact{
+  background-color: var(--color-primary);
+  color: #000;
+  font-size: x-large;
+}
+label{
+  font-size: x-large;
+}
+.btn-contact:hover{
+  background:var(--color-secondary);
+	color: #fff;
+}
